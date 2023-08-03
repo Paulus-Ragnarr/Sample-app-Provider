@@ -6,15 +6,17 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
-          children: [
-            AppBar(
-              
-            )
-          ],
-        ),
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text("ToDo App"),
+      ),
+      body: const Center(child: Text('Press the button below!')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        backgroundColor: Colors.green,
+        child: const Icon(Icons.add_outlined),
       ),
     );
   }
