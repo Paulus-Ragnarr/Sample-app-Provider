@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app_provider/provider/todo_provider.dart';
+import 'package:my_app_provider/ui/views/widgets/todo_list.dart';
+import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -10,10 +13,14 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.green,
         title: const Text("ToDo App"),
       ),
-      body: const Center(child: Text('Press the button below!')),
+      body: Consumer<TodoProvider>(
+        builder: (context, value, child) {
+          return TodoList(task: value.allTasks);
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          Navigator.of(context).pushNamed('/add');
         },
         backgroundColor: Colors.green,
         child: const Icon(Icons.add_outlined),

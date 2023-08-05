@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_provider/provider/todo_provider.dart';
+import 'package:my_app_provider/ui/views/tasks/addtask_view.dart';
 import 'package:provider/provider.dart';
 import '../homepage/home_view.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: const HomeView(),
+        routes: {
+          '/add': (context) => const AddTask(),
+        },
       ),
     );
   }
